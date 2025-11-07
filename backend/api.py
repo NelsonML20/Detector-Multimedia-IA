@@ -4,13 +4,15 @@ from fastapi import FastAPI, UploadFile, File
 import tensorflow as tf
 from keras.preprocessing import image
 import numpy as np
+import os
 from modelo.detector import build_model
 
-app = FastAPI(title=" Detector de Contenido multimedia generado por IA")
+app = FastAPI(title="Detector de Contenido multimedia generado por IA")
 
-# Cargar el modelo y sus pesos
+# Cargar el modelo y sus pesos (ruta segura)
 model = build_model()
-model.load_weights("modelo/model_weights.h5")
+model_path = os.path.join(os.path.dirname(__file__), "modelo", "model_weights.h5")
+model.load_weights(model_path)
 
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
