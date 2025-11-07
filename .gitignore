@@ -1,0 +1,7 @@
+entorno/ 
+venv/ 
+__pycache__/ 
+dataset/ 
+*.pyc 
+*.pyo 
+*.tmp 
