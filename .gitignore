@@ -1,7 +1,20 @@
-entorno/ 
-venv/ 
-__pycache__/ 
-dataset/ 
-*.pyc 
-*.pyo 
-*.tmp 
+# Ignorar entorno virtual
+entorno/
+venv/
+.env/
+
+# Ignorar dataset
+dataset/
+*.zip
+*.rar
+
+# Ignorar modelos pesados
+*.h5
+*.pkl
+*.ckpt
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+__pycache__/
+
