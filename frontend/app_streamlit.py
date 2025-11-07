@@ -19,7 +19,7 @@ if uploaded_file is not None:
     if st.button("🔍 Analizar imagen"):
         # Llamar al backend
         response = requests.post(
-            "http://127.0.0.1:8000/predict",
+            "http://0.0.0.0:8000/predict",
             files={"file": image_bytes}
         )
 
